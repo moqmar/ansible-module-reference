@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    height: 100vh;
+}
+.search {
+    display: flex;
+    position: fixed;
+    top: 0; left: 0; width: 450px; background: #000;
+    height: 50px;
+}
+.search input {
+    border: none;
+    background: #fff;
+    border-radius: 17px;
+    height: 34px; margin: 8px;
+    padding: 0 15px;
+    flex-grow: 1;
+}
+nav {
+    min-width: 450px; width: 450px;
+    flex: 0;
+    padding: 0; margin-top: 50px;
+    overflow-y: auto;
+}
+nav a {
+    display: block;
+    padding: 3px 25px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+nav a small {
+    display: block;
+    color: #444;
+}
+nav a:focus {
+    background: rgba(0,0,0,0.05);
+    font-weight: bold;
+}
+nav a.module-group {
+    background: #2980B9;
+    color: #fff;
+    font-weight: bold;
+    padding-top: 15px; padding-bottom: 15px;
+}
+nav a.module-header {
+    font-weight: bold;
+    color: #000;
+    background: rgba(0,0,0,0.1);
+}
+main {
+    padding: 25px;
+    background: #fff;
+    overflow-y: auto;
+    flex: 1;
+}
