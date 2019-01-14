@@ -3,8 +3,8 @@
 set -eu
 IFS=$'\n'
 
-rm -rf source output
-mkdir -p source output
+rm -rf source docs
+mkdir -p source docs
 toc=""
 
 for module in `
@@ -43,11 +43,11 @@ done
 echo > source/index.html
 
 for f in `ls -1 source`; do
-  cat template/top.html | sed "s/__MODULE_NAME__/$(echo $f | sed 's/\.html//')/g" > "output/$f"
-  echo "$toc" | sed 's/\\n/\n/g' >> "output/$f"
-  cat template/middle.html >> "output/$f"
-  cat "source/$f" >> "output/$f"
-  cat template/bottom.html >> "output/$f"
+  cat template/top.html | sed "s/__MODULE_NAME__/$(echo $f | sed 's/\.html//')/g" > "docs/$f"
+  echo "$toc" | sed 's/\\n/\n/g' >> "docs/$f"
+  cat template/middle.html >> "docs/$f"
+  cat "source/$f" >> "docs/$f"
+  cat template/bottom.html >> "docs/$f"
 done
 
-cp template/{script.js,style.css} output
+cp template/{script.js,style.css} docs
